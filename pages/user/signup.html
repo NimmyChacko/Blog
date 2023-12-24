@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;400&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<style>
+   *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+   } 
+   body{
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 100vh;
+    background: url("https://media.istockphoto.com/id/1226952462/photo/hawaii-summer-vacation-concept-beach-signboard-on-tropical-seashore-background.jpg?s=612x612&w=0&k=20&c=oxUoViiXj790P4WWDa00GqQbsmFWpo8XM_uswtM9Ydc=") no-repeat ; 
+   background-size: cover;
+   background-position: center;
+   }
+
+   .text-box{
+    
+    width:400px;
+    height:200px;
+    position: absolute;
+    right:160px;
+    /* box-shadow:0 0 50px aqua; */
+    border-radius: 20px;
+    padding:40px;
+    
+   }
+   .wrapper{
+    position: relative;
+    right:700px;
+    width:400px;
+    height:500px;
+    background-color:rgb(218, 241, 243);
+    box-shadow:0 0 50px aqua;
+    border-radius: 20px;
+    padding:40px;
+   }
+   div.rainbow{
+    font-size:10px;
+    text-align: center;
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:move 320s linear infinite;
+   } 
+
+  
+   .wrapper:hover{
+    animation:animate 1s linear infinite;
+   }
+
+   @keyframes animate{
+    100%{
+        filter:hue-rotate(360deg)
+    }
+   }
+  .form-wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+}
+h2{font-size:30px;
+    color:antiquewhite;
+    text-align: center;
+
+}
+.input-group{
+    position: relative;
+    margin:30px 0;
+    border-bottom: 2px solid #fff;
+}
+.input-group label{
+    position:absolute;
+    top:50%;
+    left:5px;
+    transform:translateY(-50%);
+    font-size:16px;
+    color:#222020;
+    pointer-events: none;
+    transition:.5s;
+}
+
+.input-group input{
+    width:320px;
+    height:40px;
+    font-size:16px;
+    color:#fff;
+    padding:0 5px;
+    background:transparent;
+    border:none;
+    outline:none;
+    /* background-color:red; */
+
+}
+.input-group input:focus ~ label,
+.input-group input:valid~label {
+    top:-5px;
+   
+}
+
+button{
+position:relative;
+width:100%;
+height:40px;
+background:rgb(145, 169, 234);
+box-shadow: 0 0 10px aqua;
+font-size:16px;
+color: black;
+font-weight:500;
+cursor:pointer;
+border-radius:30px;
+border: none;
+outline:none;
+}
+   </style>
+</head>
+<body>
+    <div class="text-box">
+        <h2 style="color:black;">THE JOURNEY OF A  thousand miles begins with a single step.</h2>
+    </div>
+
+    
+        
+
+ 
+ <div class="wrapper">
+    
+
+<div class="form-wrapper sign-up">
+    <form action="">
+        <div class="rainbow" style="font-family: 'Courgette', cursive;
+        font-family: 'Rock Salt', cursive; font-size:30px;">Around the World</div>
+
+    <div class="input-group">
+         <input type="name" name="name" id="name"  required="required">
+       <label for="">Name</label>
+        </div>
+
+      <div class="input-group">
+        <input type="email" name="email" id="email"  required="required">
+        <label for="">Email</label>
+        
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" id="password" required="required">
+        <label for="">Password</label>
+       </div>
+
+    <div class="input-group">
+        <input type="password" name="confirmpassword" id="confpassword" required="required">
+        <label for="">Confirm Password</label>
+
+</div>
+
+  <button type="submit"  onclick="doSignup()">Sign me up!</button>
+</form>
+</div>
+  </div>
+ <script src="/script.js"></script>  
+</body>
+</html>

@@ -1,0 +1,170 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blog Upload</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #createBlog{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+       
+        
+        <form action="/createBlog?id={{userDetails._id}}" method="post" enctype="multipart/form-data" id="createBlog">
+        <h1>Blog Content Upload</h1>
+       
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required/>
+            
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="6" required></textarea>
+            
+            <label for="image">Image:</label>
+            <input type="file" id="imageInput" name="images" multiple accept="image/*" onchange="showImages()" required/>
+            <div id="imagePreview">.</div>
+            <button type="submit">Upload</button>
+        </form>
+        </div>
+    <script src="/adminScript.js"></script> <!-- Link to your JavaScript file for interactivity -->
+</body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Travel Experience</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;400&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<style>
+   *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+   
+   }
+   .main-container{
+    background-image: url("https://wallpapers.com/images/featured/nature-2ygv7ssy2k0lxlzu.jpg");
+    width:100%;
+    background-color: blue;
+   }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+     
+    }
+    #createBlog{
+        display: flex;
+        flex-direction: column;
+    }
+     .wrapper{
+      
+    /* position: absolute; */
+    /* right: 185px; */
+    width:420px;
+    background:rgb(48, 36, 36);
+    color: #fff;
+    border-radius: 10px;
+    padding:30px 40px;
+   }
+   .wrapper .rainbow{
+    font-size:36px;
+    /* text-align: center; */
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:move 320s linear infinite;
+   }
+   @keyframes move{
+    to{
+        background-position: 4500vh;
+    }
+   } 
+    .btn{
+        width:100%;
+        height:45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        /* cursor: pointer; */
+        font-size: 16px;
+        color: grey;
+        font-weight: 600; 
+}
+ input {
+    width:100%;
+    border: none;
+        outline: none;
+        border-radius: 40px; 
+}
+textarea{
+    width:100%;
+    border: none;
+        outline: none;
+        border-radius: 40px;
+}
+</style>
+</head>
+
+<body class="pt-4 ">
+    <div class="main-container w-50 p-4 ">
+    <div class="wrapper " >
+        <form action="">
+        <div class="rainbow pb-3 " style="font-family: 'Courgette', cursive;
+        font-family: 'Rock Salt', cursive; font-size:30px;">Around the World</div>
+    <div class="container ">
+         
+       
+        <form action="/admin/createBlog?id={{userDetails._id}}" method="post" enctype="multipart/form-data" id="createBlog">
+        <h2 class="text-center"style="font-family: 'Courgette', cursive;
+         font-family: 'Comic Neue', cursive; font-size:20px;">Share Your Travel Experience</h2>
+       
+            <label for="title">Destination:</label>
+            <input class="rounded" type="text" id="title" name="title" required/>
+            
+            <label for="content">My experience:</label>
+            <textarea class="rounded" id="content" name="content" rows="6" required></textarea>
+            
+            <label for="image">Moments captured:</label>
+            <input  class="rounded" type="file" id="imageInput" name="images" multiple accept="image/*" onchange="showImages()" required/>
+            <div class="rounded" id="imagePreview">.</div>
+            <button class="btn" type="submit">Upload</button>
+        </form>
+        </div>
+    </div>
+    <script src="/adminScript.js"></script> <!-- Link to your JavaScript file for interactivity -->
+</body>
+</html>

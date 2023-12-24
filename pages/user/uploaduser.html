@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blog Upload</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;400&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Comic Neue', cursive;
+    }
+    section{
+        position:relative;
+        width:100%;
+        height:100vh;
+        display:flex;
+    }
+    section .imgBx{
+        position:relative;
+        width:50%;
+        height:100%;
+    }
+    /* .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } */
+
+section .imgBx:before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+     width:100%;
+    /* background:linear-gradient(225deg,#1adb4d,#03a9f4); */ 
+    z-index:1;
+    mix-blend-mode: screen;
+}
+    section .imgBx img{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    /* #createBlog{
+        display: flex;
+        flex-direction: column; */
+    section .contentBx{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height:100%;
+    }
+    section .contentBx .formBx{
+        width:50%
+    }
+    section .contentBx .formBx h2{ 
+        color:#607d8b;
+        font-weight:600;
+        font-size:1.5em;
+        text-transform:uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #ff4584;
+    }
+    section .contentBx .formBx .inputBx{
+        margin-bottom: 20px;
+    }
+    section .contentBx .formBx .inputBx label{
+font-size:16px;
+margin-bottom:5px;
+display:inline-block;
+color:#607d8b;
+font-weight:300;
+font-size:16px;
+letter-spacing:1px;
+    }
+    section .contentBx .formBx .inputBx  input{
+        width:100%;
+        padding:10px 20px;
+        outline:none;
+        font-weight: 400;
+        border:1px solid #607d8b;
+        font-size: 16px;
+        color:#607d8b;
+        letter-spacing:1px;
+        background: transparent;
+        border-radius: 0px;
+    }
+    section .contentBx .formBx .inputBx  input[type="submit"]{
+        background:#ff4584;
+        color:#fff;
+        outline:none;
+        border:none;
+        font-weight: 500;
+        cursor: pointer;
+         
+    }
+    section .contentBx .formBx .inputBx input[type="submit"]:hover{
+        background:#f53677;
+    }
+    @media(max-width:768 px){
+        section .imgBx{
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+        }
+        section .contentBx{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            width:100%;
+            z-index:1;
+        }
+        section .contentBx .formBx{
+            width:100%;
+            padding:40px;
+            background:rgb(255 255 255/0.9);
+            margin:50px;
+        }
+    }
+</style>
+</head>
+<body>
+    <section>
+        <div class="imgBx">
+            <img src="https://wallpapers.com/images/featured/nature-2ygv7ssy2k0lxlzu.jpg">
+            </div>
+    <div class=" contentBx">
+        <div class="formBx">
+       
+            <h1>Around the World</h1>
+            <h2>Create my Blog</h2>
+        <form action="/createBlog?id={{userDetails._id}}" method="post" enctype="multipart/form-data" id="createBlog">
+
+        <div class="inputBx">
+       <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required/>
+            </div>
+
+            <div class="inputBx">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="6" required></textarea>
+            </div>
+
+
+             <div class="inputBx">
+            <label for="image">Image:</label>
+            <input type="file" id="imageInput" name="images" multiple accept="image/" onchange="showImages()" required/>
+            </div>
+            
+            <div id="imagePreview"></div>
+
+            <div class="inputBx">
+            <input type="submit" value="Upload">
+            </div>
+        </form>
+        </div>
+        </div>
+        </section>
+    <script src="/adminScript.js"></script> 
+</body>
+</html>

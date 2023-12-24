@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;400&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<style>
+   *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+   }
+  
+body{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    /* background-size: 100% 100%;
+    aspect-ratio: 1/1; */
+   background: url("https://t4.ftcdn.net/jpg/06/14/40/89/240_F_614408912_XByfvVZhKH7tIeOAww925vEBjjGHPYgU.jpg") no-repeat ;
+   background-size: cover;
+   background-position: center;
+   }
+   .wrapper{
+    position: absolute;
+    right: 185px;
+    width:420px;
+    background:rgb(211, 184, 184);
+    color: #fff;
+    border-radius: 10px;
+    padding:30px 40px;
+   }
+   .wrapper .rainbow{
+    font-size:36px;
+    text-align: center;
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:move 320s linear infinite;
+   }
+   @keyframes move{
+    to{
+        background-position: 4500vh;
+    }
+   }
+   .wrapper .input-box{
+    position:relative;
+    width:100%;
+    height: 50px;
+    
+    margin:30px 0;
+   }
+   .input-box input{
+    width:100%;
+    height: 100%;
+    background:rgb(236, 228, 228);
+    border:none;
+    outline:none;
+    border:2px solid rgba(231, 223, 223, 0.2);
+    border-radius: 40px;
+    font-size:16px;
+    color:black;
+    padding:20px 45px 20px 20px;
+   }
+   input-box input::placeholder{
+    color:#fff;
+   }
+   .input-box i{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:20px;
+    }
+
+    .wrapper .btn{
+        width:100%;
+        height:45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        cursor: pointer;
+        font-size: 16px;
+        color: grey;
+        font-weight: 600;
+}
+.wrapper .register-link{
+    font-size:14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register-link p a{
+    color:grey;
+    text-decoration: none;
+    font-weight :600
+}
+.register-link p a:hover{
+    text-decoration: underline;
+    color:rgb(134, 42, 134);
+}
+</style>
+   
+</head>
+<body >
+
+    <div class="wrapper " >
+        <form action="">
+        <div class="rainbow" style="font-family: 'Courgette', cursive;
+        font-family: 'Rock Salt', cursive; font-size:40px;">Around the World</div>
+        <div class="input-box">
+        
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <i class='bx bxs-envelope' style="color:rgb(180, 169, 169)";></i>
+        </div>
+        <div class="input-box">
+       
+       
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' style="color:rgb(180, 169, 169)";></i>
+        </div>
+    
+        <p id="warning" style="color:rgb(235, 44, 44);"></p>
+        <button type="submit" class="btn"  onclick="doLogin()">Login</button>
+       <div class="register-link">
+        <p>Don't have an account yet? <a href="/signup">Sign up here</a></p>
+</div>
+</form>
+
+    </div>
+    <script src="/script.js"></script> 
+</body>
+</html>
